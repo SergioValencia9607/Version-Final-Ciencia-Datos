@@ -1,0 +1,13 @@
+name: TrabajoFinalVF2
+title: TrabajoFinalVF2
+username:
+account: cienciadatossergiovalencia
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1431123
+bundleId: 2571160
+url: https://cienciadatossergiovalencia.shinyapps.io/TrabajoFinalVF2/
+when: 1573131365.0737
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|datoscompletos.csv|Festivos.csv|Limpieza_Datos.R
