@@ -33,6 +33,7 @@ ui <- fluidPage(
     sidebarLayout(
         column(width = 3,
                wellPanel(style = "background: #F0F8FF",
+                         # Ingresar los botones de control para navegar por la información base y el aplicativo
                          selectInput("Comuna_Seleccionada","Comuna a analizar:",c("Seleccione una comuna:",unique(as.character(Accidentalidad$COMUNA)))),
                          selectInput("Barrio_Seleccionado","Barrio a analizar:",c("Seleccione un barrio:",unique(as.character(Accidentalidad$BARRIO)))),
                          selectInput("Mes_Analizado","Mes a analizar:",c("Seleccione un mes:",unique(as.character(unique(Accidentalidad$MES))))),
@@ -40,7 +41,7 @@ ui <- fluidPage(
                          dateRangeInput('Fechas_Seleccionadas',label = 'Filtrar entre fecha de accidentes.',start = min(as.Date(Accidentalidad$f_accidente)) , end = max(as.Date(Accidentalidad$f_accidente))),
                          sliderInput("Horas_Seleccionada", "Horas Accidentes", 0, 24, value = c(0, 24),sep = "")
                ),
-               
+               # Establecer los botones de control para los analisis especiales del aplicativo
                wellPanel(style = "background: #F0F8FF",
                          radioButtons("Condicion","Seleccione la condicion especial a analizar:",
                                       choices = c("Ninguna." = "N", "Analizar por mes." = "M","No considerar festivos." = "F","Vacaciones final año (15 Dic - 15 Ene)." = "VF","Vacaciones mitad año (15 Jun - 15 Jul)." = "VM"),selected = "N")
@@ -66,6 +67,7 @@ ui <- fluidPage(
                 )
               )
             ),
+            # Pestaña del analisis semanal y la ubicacion espacial de los accidentes
             tabPanel("Analisis Semanal - Ubicacion Espacial Accidentes",
               column(width = 12,
                 fluidRow(
@@ -84,6 +86,7 @@ ui <- fluidPage(
                 )
               )
             ),
+            # Pestaña de las caracteristicas de la accidentalidad
             tabPanel("Caracteristicas de la Accidentalidad",
               column(width = 12,
                 fluidRow(
@@ -102,6 +105,7 @@ ui <- fluidPage(
                 )
               )
             ),
+            # Pestaña del resumen de datos.
             tabPanel("Resumen Tabla de Datos",
                 column(width = 12,
                  fluidRow(
